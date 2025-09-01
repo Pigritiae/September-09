@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-based Adventure</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Dark Forest Adventure</h1>
+        <div class="story-area section">
+            <p id="story-text">Loading Story...</p>
+        </div>
+        <div class="choices-area section" id="choices-area">
+
+        </div>
+        <div class="inventory-area section">
+            <h2>Inventory</h2>
+            <ul id="inventory-list">
+                <p id="empty-inventory-message" class="empty-message">
+                    Your inventory is empty.
+                </p>
+            </ul>
+        </div>
+        <div class="controls-area">
+            <button id="restart-game-btn" class="action-button secondary">
+                Restart Game
+            </button>
+            <button id="save-game-btn" class="action-button secondary">
+                Save Game
+            </button>
+            <button id="load-game-btn" class="action-button secondary">
+                Load Game
+            </button>
+        </div>
+        <div id="message-box" class="modal">
+            <div class="modal-content">
+                <p id="message-text"></p>
+                <button id="close-message-btn" class="action-button">
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="Adventure.js"></script>
+</body>
+</html>
