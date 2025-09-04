@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stocks Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Stocks Simulator</h1>
+        <div class="section add-product-section">
+            <h2>Add New Product</h2>
+            <div class="input-group">
+                <label for="product-name">Product Name:</label>
+                <input type="text" id="product-name" placeholder="Ex: Blue Shirt">
+            </div>
+            <div class="input-group">
+                <label for="product-quantity">Initial Quantity</label>
+                <input type="number" id="product-quantity" value="1" min="1">
+            </div>
+            <button id="add-product-btn" class="action-button">Add Product</button>
+        </div>
+        <div class="section barcode-display-section">
+            <h2>Generated Barcode</h2>
+            <p id="barcode-product-name">No Product Selected</p>
+            <svg id="barcode-svg"></svg>
+            <button id="copy-barcode-btn" class="action-button" disabled>Copy Code</button>
+            <p class="hint">Use this Code for Stock Operations.</p>
+        </div>
+        <div class="section stock-operations-section">
+            <h2>Stock Operations</h2>
+            <div class="input-group">
+                <label for="barcode-input">Read Barcode:</label>
+                <input type="text" id="barcode-input" placeholder="Type or Paste your Code">
+            </div>
+            <div class="input-group">
+                <label for="operation-quantity">Quantity:</label>
+                <input type="number" id="operation-quantity" value="1" min="1">
+            </div>
+            <div class="operation-buttons">
+                <button id="entry-btn" class="action-button entry-button">Entry</button>
+                <button id="exit-btn" class="action-button exit-button">Exit</button>
+            </div>
+        </div>
+        <div class="section inventory-list-section">
+            <h2>Current Stock</h2>
+            <ul id="inventory-list">
+                <li class="empty-inventory-message">No Products in Stock.</li>
+            </ul>
+        </div>
+        <div id="message-box" class="message-box">
+            <p id="message-text"></p>
+            <button id="close-message-btn" class="action-button">OK</button>
+        </div>
+    </div>
+    <script src="Simulate.js"></script>
+</body>
+</html>
