@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Maker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Add Section</h2>
+            <button class="add-section-btn" data-section-type="personal">Personal Information</button>
+            <button class="add-section-btn" data-section-type="summary">Professional Summary</button>
+            <button class="add-section-btn" data-section-type="education">Education</button>
+            <button class="add-section-btn" data-section-type="experience">Professional Experience</button>
+            <button class="add-section-btn" data-section-type="skills">Skills</button>
+            <button class="add-section-btn" data-section-type="projects">Projects</button>
+            <button class="add-section-btn" data-section-type="languages">Languages</button>
+            <button class="add-section-btn" data-section-type="custom">Custom Section</button>
+            <hr>
+            <h2>Export</h2>
+            <button id="export-html-btn" class="export-btn">Download HTML</button>
+            <button id="export-pdf-btn" class="export-btn">Download PDF</button>
+        </div>
+        <div class="main-content">
+            <h1>Make your Resume</h1>
+            <div id="resume-preview-area">
+                
+                <div class="empty-message">Start by Adding Sections from the Sidebar</div>
+            </div>
+        </div>
+    </div>
+    <div id="export-resume-template" style="display: none;"></div>
+    <script src="Maker.js"></script>
+</body>
+</html>
