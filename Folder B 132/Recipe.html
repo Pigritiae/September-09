@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culinary Recipe Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="recipe-title"></h1>
+        <div class="section recipe-info-section">
+            <h2>Description</h2>
+            <p id="recipe-description"></p>
+        </div>
+        <div class="section ingredients-section">
+            <h2>Ingredients</h2>
+            <ul id="ingredients-list">
+            </ul>
+        </div>
+        <div class="section steps-section">
+            <h2>Steps</h2>
+            <div id="step-display" class="step-display">
+                <p id="step-number" class="step-number"></p>
+                <img id="step-image" class="step-image" src="" alt="step image" onerror="this.style.display='none'">
+                <p id="step-text" class="step-text"></p>
+                <div class="step-controls">
+                    <div id="timer-display" class="timer-display">
+                        <span id="timer-minutes">00</span>:<span id="timer-seconds">00</span>
+                    </div>
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="step-completed-checkbox">
+                        <span class="checkmark"></span>
+                        Step Completed
+                    </label>
+                </div>
+            </div>
+            <div class="navigation-buttons">
+                <button id="prev-step-btn" class="action-button secondary">Previous</button>
+                <button id="next-step-btn" class="action-button primary">Next</button>
+            </div>
+            <button id="restart-recipe-btn" class="action-button restart-button">Restart Recipe</button>
+        </div>
+        <div id="message-box" class="modal">
+            <div class="modal-content">
+                <p id="message-text"></p>
+                <button id="close-message-btn" class="action-button">OK</button>
+            </div>
+        </div>
+        <script src="Recipe.js"></script>
+    </div>
+</body>
+</html>
