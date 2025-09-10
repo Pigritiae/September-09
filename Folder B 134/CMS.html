@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Local CMS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>My Local Blog</h1>
+        <div class="section create-post-section">
+            <h2>Create New Post</h2>
+            <div class="input-group">
+                <label for="post-title">Title:</label>
+                <input type="text" id="post-title" placeholder="Post Title">
+            </div>
+            <div class="input-group">
+                <label for="post-content">Content:</label>
+                <textarea id="post-content" placeholder="Write the Post's Content Here..."></textarea>
+            </div>
+            <div class="input-group">
+                <label for="post-category">Category:</label>
+                <select id="post-category">
+                    <option value="">Select a Category:</option>
+
+                </select>
+            </div>
+            <button id="publish-post-btn" class="action-button">Publish</button>
+        </div>
+        <div class="section category-management-section">
+            <h2>Manage Categories</h2>
+            <div class="input-group">
+                <label for="new-category-name">New Category:</label>
+                <input type="text" id="new-category-name" placeholder="Category Name">
+            </div>
+            <button id="add-category-btn" class="action-button">Add Category</button>
+            <ul id="categories-list">
+                <li class="empty-message">No Category Added</li>
+            </ul>
+        </div>
+        <div class="section posts-display-section">
+            <h2>Posts</h2>
+            <div class="filter-group">
+                <label for="filter-category">Filter by Category</label>
+                <select id="filter-category">
+                    <option value="all">All Categories</option>
+
+                </select>
+            </div>
+            <div id="posts-list">
+                <p class="empty-message">No Posts yet. Create one!</p>
+            </div>
+        </div>
+        <div id="message-box" class="modal">
+            <div class="modal-content">
+                <p id="message-text"></p>
+                <button id="close-message-btn" class="action-button">OK</button>
+            </div>
+        </div>
+    </div>
+    <script src="CMS.js"></script>
+</body>
+</html>
