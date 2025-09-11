@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peccatulum Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container">
+        <div id="start-screen" class="quiz-screen active">
+            <h1>Find out Which Peccatulum you would Distort into!</h1>
+            <p>Answer the Questions and see what Sin you Relish the Most.</p>
+            <button id="start-quiz-btn" class="quiz-button primary">Start Quiz</button>
+        </div>
+        <div id="quiz-screen" class="quiz-screen">
+            <h2 id="question-text"></h2>
+            <div id="options-container" class="options-container">
+
+            </div>
+            <button id="next-question-btn" class="quiz-button secondary" disabled>Next Question</button>
+            <button id="submit-quiz-btn" class="quiz-button primary" style="display: none;">See Result</button>
+        </div>
+        <div id="result-modal" class="modal">
+            <div class="modal-content">
+                <h2 id="result-title"></h2>
+                <div id="result-image-container">
+                    <img id="result-image" src="" alt="Peccatulum">
+                </div>
+                <p id="result-description"></p>
+                <button id="restart-quiz-btn" class="quiz-button">Play Again</button>
+            </div>
+        </div>
+        <div id="message-box" class="modal">
+            <div class="modal-content">
+                <p id="message-text"></p>
+                <button id="close-message-btn" class="quiz-button">OK</button>
+            </div>
+        </div>
+    </div>
+    <script src="Quiz.js"></script>
+</body>
+</html>

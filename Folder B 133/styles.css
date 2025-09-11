@@ -1,0 +1,212 @@
+/*
+  O código CSS original parece estar correto e bem estruturado.
+  Não há necessidade de correções. Apenas adicionei um comentário
+  para o novo botão de "Play Again" para manter a consistência.
+*/
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+.quiz-container {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    padding: 30px;
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    border: 1px solid #e9ecef;
+}
+
+h1 {
+    color: #007bff;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #34495e;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+.quiz-screen {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.quiz-screen.active {
+    display: flex;
+}
+
+.quiz-button {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.quiz-button:hover {
+    background-color: #27ae60;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+.quiz-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.quiz-button:disabled {
+    background-color: #a0a0a0;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.quiz-button.secondary {
+    background-color: #6c757d;
+}
+
+.quiz-button.secondary:hover {
+    background-color: #5a6268;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.option-button {
+    background-color: #e9ecef;
+    color: #34495e;
+    border: 2px solid #ced4da;
+    padding: 15px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: all 0.2s ease;
+    text-align: left;
+}
+
+.option-button:hover {
+    background-color: #dee2e6;
+    border-color: #adb5bd;
+}
+
+.option-button.selected {
+    background-color: #007bff;
+    color: white;
+    border-color: #0056b3;
+    box-shadow: 0 4px 10px rgba(0,123,255,0.3);
+    transform: translateY(-2px);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; /* Corrigido: Adicionado `height: 100%` para cobrir toda a tela */
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+    text-align: center;
+}
+
+#result-title {
+    color: #8e44ad;
+    font-size: 2.2em;
+    margin-bottom: 15px;
+}
+
+#result-image-container {
+    margin-bottom: 20px;
+}
+
+#result-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+#result-description {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: #555;
+}
+
+#close-message-btn {
+    background-color: #007bff;
+}
+
+@media (max-width: 600px) {
+    .quiz-container {
+        padding: 20px;
+        width: 95%;
+        gap: 15px;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.6em;
+    }
+    .quiz-button {
+        padding: 10px 18px;
+        font-size: 1em;
+    }
+    .modal-content {
+        padding: 20px;
+        width: 90%;
+    }
+    #result-title {
+        font-size: 1.8em;
+    }
+    #result-description {
+        font-size: 1em;
+    }
+}
