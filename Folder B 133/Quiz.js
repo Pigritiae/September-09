@@ -256,39 +256,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function showResult() {
-        let maxScore = -1;
-        let dominantTrait = '';
-        // Corrigido: Loop para encontrar o traço dominante, a lógica estava incompleta
-        for (const trait in userScores) {
-            if (userScores[trait] > maxScore) {
-                maxScore = userScores[trait];
-                dominantTrait = trait;
-            }
-        }
-        
-        let finalResult = null; // Inicializado como null
-        let bestMatchScore = -1;
-        
-        results.forEach(result => {
-            let matchScore = 0; // Inicializado dentro do loop para cada resultado
-            // Corrigido: Iteração sobre os traços do objeto `result.traits`
-            for (const trait in result.traits) {
-                // Corrigido: Verifica se o traço existe em `userScores` antes de somar
-                if (userScores.hasOwnProperty(trait)) {
-                    matchScore += userScores[trait] * result.traits[trait];
-                }
-            }
-            if (matchScore > bestMatchScore) {
-                bestMatchScore = matchScore;
-                finalResult = result;
-            }
+        // Find the highest score(s)
+        let maxScore = Math.max(...Object.values(userScores));
+        let dominantTraits = Object.keys(userScores).filter(trait => userScores[trait] === maxScore);
+
+        // Find all results that match the dominant traits
+        let finalResults = results.filter(result => {
+            // Each result.traits is an object with a single key (the trait)
+            let traitKey = Object.keys(result.traits)[0];
+            return dominantTraits.includes(traitKey);
         });
-        
-        // Corrigido: Adicionado uma verificação para garantir que um resultado foi encontrado
-        if (finalResult) {
-            resultTitle.textContent = finalResult.name;
-            resultImage.src = finalResult.image;
-            resultDescription.textContent = finalResult.description;
+
+        // Show results (if multiple, concatenate)
+        if (finalResults.length > 0) {
+            // If only one result, show as before
+            if (finalResults.length === 1) {
+                resultTitle.textContent = finalResults[0].name;
+                resultImage.src = finalResults[0].image;
+                resultDescription.textContent = finalResults[0].description;
+            } else {
+                // Multiple results: show all names, images, and descriptions
+                resultTitle.textContent = finalResults.map(r => r.name).join(' / ');
+                // Optionally, show the first image or a generic one
+                resultImage.src = finalResults[0].image;
+                // Combine descriptions
+                resultDescription.innerHTML = finalResults.map(r => `<b>${r.name}</b>: ${r.description}`).join('<br><br>');
+            }
+        } else {
+            resultTitle.textContent = "No Result";
+            resultImage.src = "";
+            resultDescription.textContent = "Could not determine a result.";
         }
 
         quizScreen.classList.remove('active');
@@ -350,4 +347,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-/* Código corrigido pela IA Gemini */
+/* Código corrigido pela IA Gemini e Modificado pelo CoPilot do GitHub */
+
