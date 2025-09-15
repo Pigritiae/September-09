@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop or Go Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-panel">
+        <div class="game-info">
+        <h2>Stop or Go</h2>
+        <p>Letter: <span id="currentLetter"></span></p>
+        <p>Time: <span id="timer">60</span></p>
+        <p>Score: <span id="score">0</span></p>
+    </div>
+    <div class="categories">
+        <label>Name: <input type="text" id="name" disabled></label>
+        <label>Animal: <input type="text" id="animal" disabled></label>
+        <label>City: <input type="text" id="city" disabled></label>
+        <label>Object: <input type="text" id="object" disabled></label>
+    </div>
+    <button onclick="startGame()">Start Game</button>
+    <button onclick="submitAnswers()">Submit Answers</button>
+    <button onclick="resetGame()">Restart</button>
+    <p id="result"></p>
+</div>
+<script src="Game.js"></script>
+</body>
+</html>
