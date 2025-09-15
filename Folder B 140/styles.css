@@ -1,0 +1,68 @@
+body {
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+.photo-editor {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    font-family: Arial, Helvetica, sans-serif;
+}
+h2 {
+    text-align: center;
+    color: #333;
+}
+.upload-section {
+    margin: 20px 0;
+    text-align: center;
+}
+#imageUpload {
+    margin-bottom: 10px;
+}
+.preview {
+    max-width: 100%;
+    max-height: 300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.preview-img {
+    max-width: 100%;
+    max-height: 100%;
+    transition: filter 0.3s ease;
+}
+.controls {
+    margin: 20px 0;
+}
+.controls label {
+    display: block;
+    margin: 10px 0;
+}
+.controls input[type="range"] {
+    width: 100%;
+    margin-top: 5px;
+}
+/* Replaced generic button style with a more specific class for clarity and to prevent conflicts */
+.save-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.save-button:hover {
+    background: #45a049;
+}
