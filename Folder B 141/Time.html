@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Hours Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="calculator-panel">
+        <h2>Work Hours Calculator</h2>
+        <div class="input-section">
+            <label>Salary per Hour(R$): <input type="number" id="hourlyRate" step="0.01" min="0" value="20.00"></label>
+            <div class="day-section">
+                <h3>Monday</h3>
+                <label>Entry: <input type="time" id="monIn"></label>
+                <label>Exit: <input type="time" id="monOut"></label>
+            </div>
+            <div class="day-section">
+                <h3>Tuesday</h3>
+                <label>Entry: <input type="time" id="tueIn"></label>
+                <label>Exit: <input type="time" id="tueOut"></label>
+            </div>
+            <div class="day-section">
+                <h3>Wednesday</h3>
+                <label>Entry: <input type="time" id="wedIn"></label>
+                <label>Exit: <input type="time" id="wedOut"></label>
+            </div>
+            <div class="day-section">
+                <h3>Thursday</h3>
+                <label>Entry: <input type="time" id="thuIn"></label>
+                <label>Exit: <input type="time" id="thuOut"></label>
+            </div>
+            <div class="day-section">
+                <h3>Friday</h3>
+                <label>Entry: <input type="time" id="friIn"></label>
+                <label>Exit: <input type="time" id="friOut"></label>
+            </div>
+        </div>
+        <div class="result-section">
+            <p>Total Hours: <span id="totalHours">0.0</span> h</p>
+            <p>Total Daily Earnings: <span id="dailyTotal">R$ 0.00</span></p>
+            <p>Total Weekly Earnings: <span id="weeklyTotal">R$ 0.00</span></p>
+            <button onclick="calculate()">Calculate</button>
+        </div>
+    </div>
+    <script src="Calculate.js"></script>
+</body>
+</html>

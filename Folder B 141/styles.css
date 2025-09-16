@@ -1,0 +1,64 @@
+calculator-panel {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    font-family: Arial, Helvetica, sans-serif;
+}
+h2 {
+    text-align: center;
+    color: #333;
+}
+.input-section {
+    margin: 20px 0;
+}
+.day-section {
+    margin: 15px 0;
+    padding: 10px;
+    background: #fff;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+.day-section h3 {
+    margin: 0 0 10px 0;
+    color: #444;
+}
+.day-section label {
+    display: block;
+    margin: 5px 0;
+}
+.day-section input[type="number"],
+.day-section input[type="time"] {
+    padding: 5px;
+    width: 120px;
+    margin-left: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.result-section {
+    margin-top: 20px;
+    text-align: center;
+}
+.result-section p {
+    margin: 10px 0;
+}
+#totalHours, #dailyTotal, #weeklyTotal {
+    font-weight: bold;
+    color: #d32f2f;
+}
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+button:hover {
+    background: #45a049;
+}
