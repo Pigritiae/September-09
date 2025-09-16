@@ -2,10 +2,10 @@ function calculate() {
     const hourlyRate = parseFloat(document.getElementById('hourlyRate').value) || 0;
     const days = [
         { in: 'monIn', out: 'monOut' },
-        { in: 'tueOut', out: 'tueOut' },
-        { in: 'wedOut', out: 'wedOut' },
-        { in: 'thuOut', out: 'thuOut' },
-        { in: 'friOut', out: 'friOut' }
+        { in: 'tueIn', out: 'tueOut' },
+        { in: 'wedIn', out: 'wedOut' },
+        { in: 'thuIn', out: 'thuOut' },
+        { in: 'friIn', out: 'friOut' }
     ];
     let totalHours = 0;
     let dailyEarnings = 0;
@@ -33,4 +33,5 @@ document.getElementById('hourlyRate').addEventListener('input', calculate);
 ['monIn', 'monOut', 'tueIn', 'tueOut', 'wedIn', 'wedOut', 'thuIn', 'thuOut', 'friIn', 'friOut'].forEach(id => {
     document.getElementById(id).addEventListener('change', calculate);
 });
+
 calculate();
